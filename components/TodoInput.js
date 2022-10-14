@@ -1,20 +1,20 @@
 import { Button, StyleSheet, Text, TextInput, View, Modal } from 'react-native'
 import React from 'react'
 
-const TodoInput = () => {
+const TodoInput = ({ onOpenModal }) => {
     return (
         <Modal animationType='slide'>
             <View style={styles.wrapper}>
                 <View style={styles.inputSectionWrapper}>
                     <View>
-                        <TextInput style={styles.input} placeholder="Add Todo" />
+                        <TextInput style={styles.input} placeholder="Add Todo" placeholderTextColor={'gray'} />
                     </View>
                     <View style={styles.flexButton}>
                         <View style={styles.button}>
                             <Button title="Add Todo" />
                         </View>
                         <View style={styles.button}>
-                            <Button title="Cancel" color={'#F21385'} />
+                            <Button onPress={() => onOpenModal(false)} title="Cancel" color={'#F21385'} />
                         </View>
                     </View>
                 </View>
@@ -32,16 +32,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
+        backgroundColor: '#311B6C'
     },
     inputSectionWrapper: {
         width: '90%'
     },
     input: {
         width: '100%',
-        borderColor: '#000',
+        borderColor: '#fff',
         borderWidth: 1,
         padding: 8,
         borderRadius: 5,
+        color: '#fff'
     },
     button: {
         width: '40%',
