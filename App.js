@@ -7,7 +7,6 @@ import TodoList from './components/TodoList'
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [todoData, setTodoData] = useState([]);
-  console.warn(todoData)
 
   return (
     <>
@@ -20,7 +19,10 @@ const App = () => {
         </View>
         <View style={styles.todoList}>
 
-          <FlatList data={todoData} renderItem={({ item }) => <TodoList name={item.name} />} />
+          <FlatList data={todoData}
+            renderItem={({ item }) => <TodoList name={item.name} />}
+            keyExtractor={item => item.id}
+          />
         </View>
         {openModal && <TodoInput onOpenModal={setOpenModal} onSetTodo={setTodoData} />}
       </View>
