@@ -1,17 +1,25 @@
 import { Button, StyleSheet, Text, TextInput, View, Modal } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
-const TodoInput = ({ onOpenModal }) => {
+const TodoInput = ({ onOpenModal, onSetTodo }) => {
+    const [todoInput, setTodoInput] = useState('');
+
+    const handleSetTodoData = () => {
+        onSetTodo(prev => [...prev, { name: todoInput, id: (Math.random() + 1).toString(36).substring(7) }]);
+        setTodoInput('');
+        onOpenModal(false);
+    }
+
     return (
         <Modal animationType='slide'>
             <View style={styles.wrapper}>
                 <View style={styles.inputSectionWrapper}>
                     <View>
-                        <TextInput style={styles.input} placeholder="Add Todo" placeholderTextColor={'gray'} />
+                        <TextInput onChangeText={setTodoInput} style={styles.input} placeholder="Add Todo" placeholderTextColor={'gray'} />
                     </View>
                     <View style={styles.flexButton}>
                         <View style={styles.button}>
-                            <Button title="Add Todo" />
+                            <Button onPress={() => handleSetTodoData()} title="Add Todo" />
                         </View>
                         <View style={styles.button}>
                             <Button onPress={() => onOpenModal(false)} title="Cancel" color={'#F21385'} />
