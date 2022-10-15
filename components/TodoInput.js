@@ -19,10 +19,10 @@ const TodoInput = ({ onOpenModal, onSetTodo }) => {
                     </View>
                     <View style={styles.flexButton}>
                         <View style={styles.button}>
-                            <Button onPress={() => handleSetTodoData()} title="Add Todo" />
+                            <Button onPress={() => handleSetTodoData()} color={'#751DE1'} title="Add Todo" />
                         </View>
                         <View style={styles.button}>
-                            <Button onPress={() => onOpenModal(false)} title="Cancel" color={'#F21385'} />
+                            <Button onPress={() => onOpenModal(false)} color={'#F2138C'} title="Cancel" />
                         </View>
                     </View>
                 </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        backgroundColor: '#311B6C'
+        backgroundColor: '#030F29'
     },
     inputSectionWrapper: {
         width: '90%'

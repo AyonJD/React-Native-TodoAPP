@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: 20,
     flex: 1,
-    backgroundColor: '#311B6C',
+    backgroundColor: '#030F29',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   touchableButton: {
-    backgroundColor: '#F21385',
+    backgroundColor: '#751DE1',
     padding: 10,
     borderRadius: 5,
     width: 200,
@@ -55,7 +55,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   todoList: {
     flex: 7,

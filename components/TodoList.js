@@ -18,13 +18,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     marginBottom: 15,
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
     paddingVertical: 10,
     borderRadius: 5,
     paddingHorizontal: 15,
   },
   todoText: {
-    color: '#fff',
+    color: '#030F29',
     fontSize: 15,
 
   },
