@@ -8,6 +8,10 @@ const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [todoData, setTodoData] = useState([]);
 
+  const handleRemoveTodo = (id) => {
+    setTodoData(prev => prev.filter(todo => todo.id !== id));
+  }
+
   return (
     <>
       <StatusBar style="light" />
@@ -20,7 +24,7 @@ const App = () => {
         <View style={styles.todoList}>
 
           <FlatList data={todoData}
-            renderItem={({ item }) => <TodoList name={item.name} />}
+            renderItem={({ item }) => <TodoList onRemove={handleRemoveTodo} singleTodoData={item} />}
             keyExtractor={item => item.id}
           />
         </View>

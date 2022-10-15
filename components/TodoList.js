@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const TodoList = ({name}) => {
+const TodoList = ({ singleTodoData, onRemove }) => {
   return (
-    <View style={styles.wrapper}>
-      <Text style={styles.todoText}>{name}</Text>
-    </View>
+    <TouchableOpacity onPress={() => onRemove(singleTodoData.id)} activeOpacity={.3}>
+      <View style={styles.wrapper}>
+        <Text style={styles.todoText}>{singleTodoData.name}</Text>
+      </View>
+    </TouchableOpacity>
   )
 }
 
